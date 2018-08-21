@@ -46,6 +46,11 @@ public class FormElementSwitchViewHolder extends BaseViewHolder {
         mTextViewTitle.setText(mFormElementSwitch.getTitle());
         mTextViewPositive.setText(mFormElementSwitch.getPositiveText());
         mTextViewNegative.setHint(mFormElementSwitch.getNegativeText());
+        if(mFormElementSwitch.getValue().equals(mFormElementSwitch.getPositiveText())){
+            mSwitch.setChecked(true);
+        } else {
+            mSwitch.setChecked(false);
+        }
         mSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
